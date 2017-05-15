@@ -13,7 +13,7 @@ before_script:
 
 script:
   - yarn install
-  - ng build -prod
+  - ng build -prod -bh quartzworld.github.io/
 
 deploy:
   provider: pages
