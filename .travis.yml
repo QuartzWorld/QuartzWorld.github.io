@@ -13,12 +13,16 @@ before_script:
 
 script:
   - yarn install
+  # headless chrome add.
+  # - ng test
+  # - ng e2e
   - ng build -prod -bh quartzworld.github.io/
 
 deploy:
   provider: pages
   skip_cleanup: true
   local_dir: dist/
+  target_branch: master
   github_token: $GITHUB_TOKEN
   on:
     branch: master
