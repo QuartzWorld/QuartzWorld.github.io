@@ -17,7 +17,7 @@ script:
   - npm install
   # headless chrome add.
   # - ng test
-  - ng e2e
+  # - ng e2e
   - ng build -prod
 
 deploy:
