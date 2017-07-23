@@ -4,15 +4,14 @@ node_js:
   - "8"
 
 cache:
-  yarn: true
   directories:
     - ./node_modules
 
 before_script:
-  - yarn global add @angular/cli
+  - npm install -g @angular/cli@1.2.3
 
 script:
-  - yarn install
+  - npm install
   # headless chrome add.
   # - ng test
   # - ng e2e
