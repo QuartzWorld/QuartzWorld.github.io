@@ -1,5 +1,8 @@
+dist: trusty
 language: node_js
 sudo: false
+addons:
+  chrome: stable
 node_js:
   - "8"
 
@@ -8,13 +11,14 @@ cache:
     - ./node_modules
 
 before_script:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:49152 &
   - npm install -g @angular/cli@latest
 
 script:
   - npm install
   # headless chrome add.
   # - ng test
-  # - ng e2e
+  - ng e2e
   - ng build -prod
 
 deploy:
